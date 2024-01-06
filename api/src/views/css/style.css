@@ -1,34 +1,46 @@
-@media (max-width: 768px) {
-    /* Estilos para telas menores (responsividade) */
-    .seu-elemento {
-        color: blue; /*Exemplo*/
-    }
-}
-
 #footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    /* padding: 10px 0; Ajuste o padding conforme desejado; */
+    z-index: 1;
+    /* height: 50px; Ajuste a altura conforme desejado  */
 }
 
 /*background da do header*/
-.cabecalho{
-    background-color: #1E1E1E;
+.cabecalho {
+    /* background-color: rgba(240, 253, 255) */
+    background-color: rgb(25, 25, 25)
 }
 
 .formLogin {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.loginPad {
+    padding-top: 270px;
 }
 
 /*background da body*/
-.corpo{
+.corpo {
     /*background-image: url(/assets/background-prateleira.png);*/
     /*background: url(<path-to-image>), lightgray 0px -153.839px / 100% 130.047% no-repeat;*/
-    background-image: url(/assets/background-prateleira-mono.svg);
-    background-repeat: no-repeat;
-    background-position: 0% -4%;
-    background-size: cover;
-    min-height: 100vh;
-    width: 100vw;
-    padding-top: 100px;
+    background-position: 10vw;
+    font-family: Helvetica, Arial, sans-serif;
+    /* min-height: 100vh; */
+    /* width: 99vw; */
+    /* padding-top: 10px; */
+
+}
+
+.sombreado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 /* .corpo-Login {
@@ -42,25 +54,67 @@
 } */
 
 .corpo-Login {
-    background-image: url(/assets/background-prateleira-mono.svg);
-    background-repeat: no-repeat;
-    background-position: 0% -4%;
-    background-size: cover;
-    height: 100vh;
+    height: 99vh;
     width: 100vw;
-    padding: 20px; /* Reduza o preenchimento para dispositivos móveis */
-    padding-top: 200px;
+    display: flex;
+    align-items: center;
+    /* padding: 20px; */
+    /* Reduza o preenchimento para dispositivos móveis */
+    /* padding-top: 200px; */
 }
 
-#content-main{
+.background-login {
+    background-image: url(/assets/Prancheta_11.png);
+    background-size: 112%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 112px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    filter: blur(1px);
+}
+
+.background-admin {
+    height: 100vh;
+    width: 100vw;
+    background-color: #f2fdff;
+    background-image: url(/assets/fundo-admin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#logo {
+    height: 85px;
+}
+
+.logo-link {
+    margin-left: 50px;
+}
+
+.home-logout {
+    padding-right: 50px;
+}
+
+#content-main {
     min-height: 100%;
     position: relative;
 }
+
 /* Adiciona um padding ao body quando o menu é aberto, Ajuste a altura de acordo com a altura do menu  */
 .navbar {
     z-index: 1;
     position: relative;
 }
+
 .menu-aberto {
     padding-top: 180px;
 }
@@ -68,8 +122,9 @@
 /*altera cor padrão do menu de hamburgue*/
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,217,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-   
+
 }
+
 /*altera cor padrão da borda do menu de hamburgue*/
 .navbar-dark .navbar-toggler {
     border-color: rgba(255, 217, 0, 1);
@@ -80,7 +135,7 @@
     font-weight: bold;
 }
 
-.nav-link-black{
+.nav-link-black {
     color: black;
 }
 
@@ -96,10 +151,10 @@
 }
 
 /*botão padrao*/
-.btn-default{
+.btn-default {
     background-color: black;
     font-weight: 600;
-    color:white;
+    color: white;
     box-shadow: 5px 4px 1px -1px rgba(255, 217, 0, 1);
     transition-duration: 0.4s;
     border-radius: 7px;
@@ -109,24 +164,75 @@
 }
 
 .btn-default:hover {
-    background-color: rgba(255, 217, 0, 1); 
+    background-color: rgba(255, 217, 0, 1);
     font-weight: 600;
     color: black;
     box-shadow: none;
     border: 2px solid #000;
 }
 
+.admin-options {
+    position: absolute;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+}
+
+.btn-cad-usuario {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cad-usuario:hover {
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+.btn-atualiza-usuario {
+    background-color: rgb(27, 51, 95);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-atualiza-usuario:hover {
+    background-color: rgb(15, 33, 61);
+    color: white;
+}
+
+.texto-botao-cima {
+    font-size: 14px;
+    padding: 7px 0 40px 2px;
+}
+
+.texto-botao-baixo {
+    font-size: 14px;
+    padding: 7px 0 0 2px;
+}
+
 .btn-cat {
     background-color: black;
     font-weight: 400;
-    color:white;
+    color: white;
     box-shadow: 5px 4px 1px -1px rgba(255, 217, 0, 1);
     transition-duration: 0.4s;
     border-radius: 7px;
 }
 
 .btn-cat:hover {
-    background-color: rgba(255, 217, 0, 1); 
+    background-color: rgba(255, 217, 0, 1);
     font-weight: 400;
     color: black;
     box-shadow: none;
@@ -138,11 +244,16 @@
     color: black;
 }
 
+.bg-tabValor {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
 /*botão de atualizar produto*/
-.btn-atualizar{
+.btn-atualizar {
     background-color: black;
     font-weight: 600;
-    color:rgb(7, 255, 61);
+    color: rgb(7, 255, 61);
     box-shadow: 5px 4px 1px -1px rgb(7, 255, 61);
     transition-duration: 0.4s;
     border-radius: 7px;
@@ -160,10 +271,10 @@
 }
 
 /*botão de remover produto*/
-.btn-remover{
+.btn-remover {
     background-color: black;
     font-weight: 600;
-    color:rgb(238, 35, 35);
+    color: rgb(238, 35, 35);
     box-shadow: 5px 4px 1px -1px rgb(238, 35, 35);
     transition-duration: 0.4s;
     border-radius: 7px;
@@ -181,7 +292,7 @@
 }
 
 
-.input-valor{
+.input-valor {
     width: 80px;
 }
 
@@ -204,25 +315,32 @@
     border-radius: 5px;
 }
 
-.table-rounded th, .table-rounded td {
-    border-left: 1px solid #343a40; /* Cor cinza que parece ser a cor padrão de fundo das tabelas dark no Bootstrap */
+.table-rounded th,
+.table-rounded td {
+    border-left: 1px solid #343a40;
+    /* Cor cinza que parece ser a cor padrão de fundo das tabelas dark no Bootstrap */
 }
 
-.table-rounded th:first-child, .table-rounded td:first-child {
+.table-rounded th:first-child,
+.table-rounded td:first-child {
     border-left: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
-.table-rounded th:last-child, .table-rounded td:last-child {
+.table-rounded th:last-child,
+.table-rounded td:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 .fundo-formulario {
-    background-color: rgba(0, 0, 0, 0.7);  /* Preto com 70% de opacidade */
-    padding: 15px;  /* Um pouco de padding para dar espaço aos elementos internos */
-    border-radius: 5px;  /* Borda arredondada para estética */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Preto com 70% de opacidade */
+    padding: 15px;
+    /* Um pouco de padding para dar espaço aos elementos internos */
+    border-radius: 5px;
+    /* Borda arredondada para estética */
 }
 
 body {
@@ -245,7 +363,8 @@ body {
     overflow-x: auto;
     padding: 20px;
     gap: 10px;
-    background-color: transparent;;
+    background-color: transparent;
+    ;
 }
 
 .module {
@@ -284,4 +403,32 @@ body {
 
 .produtoItem {
     color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    /* Estilos para telas menores (responsividade) */
+    .background {
+        background-image: url(/assets/background-prateleira-mono.svg);
+        background-size: 250%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -2;
+        filter: blur(1px);
+    }
+    .loginPad {
+        padding-top: 150px;
+    }
+    .corpo-Login {
+        height: 99vh;
+        width: 100vw;
+        padding: 20px;
+        position: fixed;
+        /* Reduza o preenchimento para dispositivos móveis */
+        /* padding-top: 200px; */
+    }
 }

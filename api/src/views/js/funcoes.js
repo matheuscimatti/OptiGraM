@@ -856,28 +856,28 @@ async function cadastraGondula() {
     }
 
     if (!categoriasAdicionadas.length) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndula!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let alturaGondula = Math.trunc(document.getElementById('alturaGondula').value);
     if (!alturaGondula) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndula!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraGondula = Math.trunc(document.getElementById('larguraGondula').value);
     if (!larguraGondula) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndula!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let qtdNiveis = parseInt(document.getElementById('numNiveis').value);
     if (!qtdNiveis || isNaN(qtdNiveis) || qtdNiveis <= 0) {
-        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndula!</p>";
+        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1000,7 +1000,7 @@ async function listarGondulas() {
     if (gondulas.data.found) {
         document.getElementById("msgSemGondulas").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione uma Gôndula--</option>';
+        let opcoes = '<option value="">--Selecione uma Gôndola--</option>';
         for (let i = 0; i < resposta.length; i++) {
             // console.log(resposta[i]['nome']);
             // gondulaSelect.innerHTML = gondulaSelect.innerHTML + '<option value="' + resposta[i]['_id'] + '">' + resposta[i]['nome'] + '</option>';
@@ -1021,7 +1021,7 @@ async function listarGondulas() {
 async function atualizaGondula() {
     let gondulaOption = gondulaSelect.options[gondulaSelect.selectedIndex].value;
     if (!gondulaOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndula para Alterar!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndola para Alterar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1034,34 +1034,34 @@ async function atualizaGondula() {
 
     let nomeGondula = document.getElementById('nomeGondula').value;
     if (!nomeGondula) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>A gôndula precisa ter um nome!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>A gôndola precisa ter um nome!</p>";
         scrollTo(0, 0);
         return;
     }
 
     if (!categoriasAdicionadas.length) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndula!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let alturaGondula = Math.trunc(document.getElementById('alturaGondula').value);
     if (!alturaGondula) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndula!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraGondula = Math.trunc(document.getElementById('larguraGondula').value);
     if (!larguraGondula) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndula!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let qtdNiveis = parseInt(document.getElementById('numNiveis').value);
     if (!qtdNiveis || isNaN(qtdNiveis) || qtdNiveis <= 0) {
-        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndula!</p>";
+        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1083,12 +1083,12 @@ async function atualizaGondula() {
 async function removeGondula() {
     let gondulaOption = gondulaSelect.options[gondulaSelect.selectedIndex].value;
     if (!gondulaOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndula se quiser Remover!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndola se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }
 
-    if (confirm("Você deseja realmente excluir esta Gôndula?")) {
+    if (confirm("Você deseja realmente excluir esta Gôndola?")) {
         const remover = await axios.delete("/gondula/" + gondulaOption);
         alert(remover.data.message);
         location.reload();
@@ -1189,7 +1189,7 @@ function statusBotao() {
     const isGenerating = localStorage.getItem('gerandoPlan') === 'true';
 
     if (isGenerating) {
-        document.getElementById("msgGerando").innerHTML = "<p style='color: #f33; font-weight: bold; font-size: 20px'>Estamos gerando seu Planograma, por favor aguarde!</p>";
+        document.getElementById("msgGerando").innerHTML = "<p style='color: #f33; font-weight: bold; font-size: 20px'>Planograma sendo gerado. Por favor, aguarde para gerar outro!</p>";
         btnGeraPlan.disabled = true;
     } else {
         document.getElementById("msgGerando").innerHTML = "";
@@ -1200,7 +1200,7 @@ function statusBotao() {
 async function gerarPlanograma() {
     let gondulaPOption = gondulaPlanograma.options[gondulaPlanograma.selectedIndex].value;
     if (!gondulaPOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold;'>Selecione uma Gôndula para Gerar o Planograma!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold;'>Selecione uma Gôndola para Gerar o Planograma!</p>";
         scrollTo(0, 0);
         return;
     }
