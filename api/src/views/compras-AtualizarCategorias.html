@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 </head>
 
@@ -24,153 +23,143 @@
 
 
 <body class="corpo">
-    <header class=" cabecalho bg-dark fixed-top">
-        <nav class="navbar navbar-dark cabecalho  box-shadow">
+    <header class="cabecalho bg-dark fixed-top">
+        <nav class="navbar navbar-dark cabecalho box-shadow">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/dashboard">
-                    <img id="logo" src="assets/Logo.svg" alt="OptiGraM">
+                <a class="navbar-brand logo-link" href="/dashboard">
+                    <img id="logo" src="assets/logo2.png" alt="OptiGraM">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCompras"
-                    aria-controls="navbarheader" aria-expanded="false" aria-label="Toggle navigation"
-                    onclick="toggleMenu()">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse mr-auto" id="menuCompras">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <!-- <a href="compras-ProdutosCadastrados.html" class="nav-link nav-link-black">Produtos
-                                Cadastrados</a> -->
-                        </li>
-                        <li class="nav-item">
-                            <a href="/logout" class="nav-link nav-link-yellow">Sair</a>
-                        </li>
-                    </ul>
+                <div class="d-flex align-items-center home-logout">
+                    <a href="/dashboard" class="me-2 btn btn-header">
+                        <i class="fas fa-home icon-header"></i>
+                    </a>
+                    <div class="vertical-line mx-3" style="border: 1px solid white; height: 20px;"></div>
+                    <a href="/logout" class="ms-2 btn btn-header">
+                        <i class="fas fa-sign-out-alt icon-header"></i>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container mt-5">
-        <h1 style="color: whitesmoke">Atualiza Categorias</h1>
-        <div class="fundo-formulario">
-            <form>
+    <div class="bg-cad-categoria">
 
-                <div class="form-group">
-                    <label for="categoriaSelect" class="form-label text-warning">Categoria:</label>
-                    <select class="form-select" id="categoriaSelect">
-                        <option selected>--Selecione uma Categoria--</option>
-                    </select>
-                    <span id="msgSemCategorias"></span>
-                </div>
+        <div class="container mt-4 col-sm-7">
+            <h1 class="titulo">Atualização de Categorias</h1>
+            <div class="fundo-formulario">
+                <form>
 
-                <div class="form-group">
-                    <label for="tiposDropdown" class="form-label text-warning">Tipo da Categoria:</label>
-                    <select class="form-select" id="tiposDropdown">
-                        <option value=""></option>
-                        <option value="destino">Produtos de Destino</option>
-                        <option value="rotina">Produtos de Rotina</option>
-                        <option value="ocasional">Produtos de Ocasionais</option>
-                        <option value="conveniencia">Produtos de Conveniência</option>
-                    </select>
-                    <span id="msgNaoSelecionado"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="nomeCategoria" class="text-warning">Nome da Categoria:</label>
-                    <input type="text" class="form-control" id="nomeCategoria" name="nome" required>
-                    <span id="msgSemNome"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="larguraMinCategoria" class="col-sm-3 text-warning">Largura Mín. (cm):</label>
-                    <div class="col-sm-3">
-                        <input type="number" step="1" class="form-control input-valor" id="larguraMinCategoria"
-                            name="larguraMin" min="0" required pattern="^[0-9]+$">
+                    <div class="form-group">
+                        <label for="categoriaSelect" class="label">Categoria</label>
+                        <select class="form-select" id="categoriaSelect">
+                            <option selected></option>
+                        </select>
+                        <span id="msgSemCategorias"></span>
                     </div>
-                    <span id="msgLargMin"></span>
-                </div>
 
-                <div class="form-group">
-                    <label for="larguraMaxCategoria" class="col-sm-3 text-warning">Largura Máx. (cm):</label>
-                    <div class="col-sm-3">
-                        <input type="number" step="1" class="form-control input-valor" id="larguraMaxCategoria"
-                            name="larguraMax" min="0" required pattern="^[0-9]+$">
+                    <div class="form-group">
+                        <label for="tiposDropdown" class="label">Tipo da Categoria</label>
+                        <select class="form-select" id="tiposDropdown">
+                            <option value="" selected></option>
+                            <option value="destino">Produtos de Destino</option>
+                            <option value="rotina">Produtos de Rotina</option>
+                            <option value="ocasional">Produtos Ocasionais</option>
+                            <option value="conveniencia">Produtos de Conveniência</option>
+                        </select>
+                        <span id="msgNaoSelecionado"></span>
                     </div>
-                    <span id="msgLargMax"></span>
-                </div>
 
-                <div class="form-group">
-                    <label for="tabelaRegioes" class="text-warning mt-3">Valor Agregado por Região (em %): </label>
-                    <table id="tabelaRegioes" class="table table-dark mt-3 table-rounded" style="display: block;">
-                        <thead class="thead-light">
-                            <tr>
-                                <th style="text-align: center;">Cima</th>
-                                <th style="text-align: center;">Centro</th>
-                                <th style="text-align: center;">Baixo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="number" step="1" class="form-control bg-dark text-warning"
-                                        id="regiaoCima" name="regiaoCima" min="0" max="100" required pattern="^[0-9]+$">
-                                </td>
-                                <td><input type="number" step="1" class="form-control bg-dark text-warning"
-                                        id="regiaoCentro" name="regiaoCentro" min="0" max="100" required
-                                        pattern="^[0-9]+$"></td>
-                                <td><input type="number" step="1" class="form-control bg-dark text-warning"
-                                        id="regiaoBaixo" name="regiaoBaixo" min="0" max="100" required
-                                        pattern="^[0-9]+$"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <span id="msgRegioes"></span>
-                </div>
+                    <div class="form-group">
+                        <label for="nomeCategoria" class="label">Nome da Categoria</label>
+                        <input type="text" placeholder="Ex: Iogurtes" class="form-control" id="nomeCategoria"
+                            name="nome" required>
+                        <span id="msgSemNome"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label class="text-warning">Disposição:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="orientacao" id="horizontal"
-                            value="horizontal" checked>
-                        <label class="form-check-label text-white" for="horizontal">
-                            Horizontal
-                        </label>
+                    <div class="container-2">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="larguraMinCategoria" class="label">Largura Mín. (cm):</label>
+                                    <input type="number" step="1" class="form-control input-largura" id="larguraMinCategoria"
+                                        name="larguraMin" min="0" required pattern="^[0-9]+$">
+                                    <span id="msgLargMin"></span>
+                                </div>
+                            </div>
+                    
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="larguraMaxCategoria" class="label">Largura Máx. (cm):</label>
+                                    <input type="number" step="1" class="form-control input-largura" id="larguraMaxCategoria"
+                                        name="larguraMax" min="0" required pattern="^[0-9]+$">
+                                    <span id="msgLargMax"></span>
+                                </div>
+                            </div>
+                    
+                            <div class="col-sm-4">
+                                <label class="label">Disposição</label>
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline"> <!-- Use a classe 'form-check-inline' para alinhar os radios lado a lado -->
+                                        <input class="form-check-input" type="radio" name="isHorizontal" id="vertical" value="vertical">
+                                        <label class="form-check-label" for="vertical">Vertical</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="isHorizontal" id="horizontal"
+                                            value="horizontal" checked>
+                                        <label class="form-check-label" for="horizontal">Horizontal</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="orientacao" id="vertical" value="vertical">
-                        <label class="form-check-label text-white" for="vertical">
-                            Vertical
-                        </label>
-                    </div>
-                </div>
 
-                <div style="margin-top: 25px;" class="d-flex gap-3 justify-content-start">
-                    <div class="pr-2">
-                        <button type="button" onclick="atualizaCategoria()" class="btn btn-atualizar btn-lg"><i
-                                class="fas fa-sync-alt"></i> Atualizar Categoria</button>
+                    <div class="form-group">
+                        <label for="tabelaRegioes" class="label">Valor agregado por Região (em %): </label>
+                        <table id="tabelaRegioes" class="table table-light table-rounded">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th style="text-align: center; background-color: #a6c9e7;">Cima</th>
+                                    <th style="text-align: center; background-color: #a6c9e7;">Centro</th>
+                                    <th style="text-align: center; background-color: #a6c9e7;">Baixo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="number" step="1" class="form-control bg-tabValor" id="regiaoCima"
+                                            name="regiaoCima" min="0" max="100" value="60" required pattern="^[0-9]+$">
+                                    </td>
+                                    <td><input type="number" step="1" class="form-control bg-tabValor"
+                                            id="regiaoCentro" name="regiaoCentro" min="0" max="100" value="100" required
+                                            pattern="^[0-9]+$"></td>
+                                    <td><input type="number" step="1" class="form-control bg-tabValor"
+                                            id="regiaoBaixo" name="regiaoBaixo" min="0" max="100" value="50" required
+                                            pattern="^[0-9]+$"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span id="msgRegioes"></span>
                     </div>
-                    <div>
-                        <button type="button" onclick="removeCategoria()" class="btn btn-remover btn-lg "><i
-                                class="fas fa-trash-alt"></i> Remover Categoria</button>
-                    </div>
-                </div>
 
-            </form>
+                    <div class="d-flex gap-5 btn-atua-remove" style="margin-bottom: 70px; margin-right: 50px;">
+                            <button type="button" onclick="atualizaCategoria()" class="btn btn-atualizar btn-lg"><i
+                                    class="fa-solid fa-floppy-disk" style='font-size:24px'></i> Salvar</button>
+                            <button type="button" onclick="removeCategoria()" class="btn btn-remover btn-lg "><i
+                                    class="fas fa-trash-alt"></i> Apagar</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
+
     </div>
 
+    <footer id="footer-2" class="bg-dark text-center text-white mt-auto bottom-0">
 
-    <h1></h1>
+        <div class="container p-1 pb-0">
 
-
-
-    <footer id="footer" class="bg-dark text-center text-white  bottom-0">
-
-        <div class="container p-2 pb-0">
-
-            <section class="mb-2">
-
+            <section class="mb-1">
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><svg
+                <a class="btn btn-outline-light btn-floating m-0" href="#!" role="button"><svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
                         <path
@@ -180,10 +169,12 @@
 
         </div>
 
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
+        <!-- Copyright -->
+        <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
             <a class="text-white" href="#">OptiGraM</a>
         </div>
+        <!-- Copyright -->
     </footer>
 
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>

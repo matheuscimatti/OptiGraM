@@ -18,41 +18,41 @@ async function cadastraUsuario() {
 
     let nomeUsuario = document.getElementById('nomeUsuario').value;
     if (!nomeUsuario) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let cargoOption = cargoSelect.options[cargoSelect.selectedIndex].value;
     if (!cargoOption) {
-        document.getElementById("msgSemCargo").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, selecione um Cargo para cadastrar o usuário!</p>";
+        document.getElementById("msgSemCargo").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, selecione um Cargo para cadastrar o usuário!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let cpfUsuario = document.getElementById('cpfUsuario').value;
     if (!cpfUsuario) {
-        document.getElementById("msgSemCpf").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe o CPF do usuário para cadastrar!</p>";
+        document.getElementById("msgSemCpf").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe o CPF do usuário para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let senhaUsuario = document.getElementById('senhaUsuario').value;
     if (!senhaUsuario) {
-        document.getElementById("msgSemSenha").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe uma senha para cadastrar!</p>";
+        document.getElementById("msgSemSenha").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe uma senha para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let senhaRepete = document.getElementById('senhaRepete').value;
     if (!senhaRepete) {
-        document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, repita a senha para cadastrar!</p>";
+        document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, repita a senha para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     if (senhaUsuario != senhaRepete) {
-        document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: #f33; font-weight: bold'>As senhas devem ser iguais para cadastrar!</p>";
+        document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>As senhas devem ser iguais para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -121,7 +121,7 @@ async function listarUsuarios() {
     if (usuarios.data.found) {
         document.getElementById("msgSemUsuarios").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione um Usuário--</option>';
+        let opcoes = '<option value=""></option>';
         for (let i = 0; i < resposta.length; i++) {
             // console.log(resposta[i]['nome']);
             // usuarioSelect.innerHTML = usuarioSelect.innerHTML + '<option value="' + resposta[i]['_id'] + '">' + resposta[i]['nome'] + '</option>';
@@ -143,7 +143,7 @@ async function listarUsuarios() {
 async function atualizaUsuario() {
     let usuarioOption = usuarioSelect.options[usuarioSelect.selectedIndex].value;
     if (!usuarioOption) {
-        document.getElementById("msgSemUsuarios").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione um Usuário para Alterar!</p>";
+        document.getElementById("msgSemUsuarios").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione um Usuário para Alterar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -154,21 +154,21 @@ async function atualizaUsuario() {
 
     let nomeUsuario = document.getElementById('nomeUsuario').value;
     if (!nomeUsuario) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>O usuário precisa ter um Nome!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O usuário precisa ter um Nome!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let cargoOption = cargoSelect.options[cargoSelect.selectedIndex].value;
     if (!cargoOption) {
-        document.getElementById("msgSemCargo").innerHTML = "<p style='color: #f33; font-weight: bold'>O usuário precisa ter um Cargo!</p>";
+        document.getElementById("msgSemCargo").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O usuário precisa ter um Cargo!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let cpfUsuario = document.getElementById('cpfUsuario').value;
     if (!cpfUsuario) {
-        document.getElementById("msgSemCpf").innerHTML = "<p style='color: #f33; font-weight: bold'>O CPF é obrigatório!</p>";
+        document.getElementById("msgSemCpf").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O CPF é obrigatório!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -178,18 +178,18 @@ async function atualizaUsuario() {
 
     if (senhaUsuario) {
         if (!senhaRepete) {
-            document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: #f33; font-weight: bold'>Repita a senha para atualizar!</p>";
+            document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Repita a senha para atualizar!</p>";
             scrollTo(0, 0);
             return;
         }
         if (senhaUsuario != senhaRepete) {
-            document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: #f33; font-weight: bold'>As senhas devem ser iguais para atualizar!</p>";
+            document.getElementById("msgSenhaRepete").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>As senhas devem ser iguais para atualizar!</p>";
             scrollTo(0, 0);
             return;
         }
     }
     if (senhaRepete && !senhaUsuario) {
-        document.getElementById("msgSemSenha").innerHTML = "<p style='color: #f33; font-weight: bold'>Você preencheu a repetição mas não preencheu o primeiro campo de senha!</p>";
+        document.getElementById("msgSemSenha").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Você preencheu a repetição mas não preencheu o primeiro campo de senha!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -209,7 +209,7 @@ async function atualizaUsuario() {
 async function removeUsuario() {
     let usuarioOption = usuarioSelect.options[usuarioSelect.selectedIndex].value;
     if (!usuarioOption) {
-        document.getElementById("msgSemUsuarios").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione um Usuário se quiser Remover!</p>";
+        document.getElementById("msgSemUsuarios").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione um Usuário se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -236,7 +236,7 @@ if (tipoSelect) {
 async function cadastraCategoria() {
     let tipoOption = tipoSelect.options[tipoSelect.selectedIndex].value;
     if (!tipoOption) {
-        document.getElementById("msgNaoSelecionado").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, selecione um Tipo de Categoria para cadastrar!</p>";
+        document.getElementById("msgNaoSelecionado").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, selecione um Tipo de Categoria para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -247,21 +247,21 @@ async function cadastraCategoria() {
 
     let nomeCategoria = document.getElementById('nomeCategoria').value;
     if (!nomeCategoria) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraMinCategoria = Math.trunc(document.getElementById('larguraMinCategoria').value);
     if (!larguraMinCategoria) {
-        document.getElementById("msgLargMin").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe a largura mínima para cadastrar!</p>";
+        document.getElementById("msgLargMin").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe a largura mínima para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraMaxCategoria = Math.trunc(document.getElementById('larguraMaxCategoria').value);
     if (!larguraMaxCategoria) {
-        document.getElementById("msgLargMax").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe a largura máxima para cadastrar!</p>";
+        document.getElementById("msgLargMax").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe a largura máxima para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -270,7 +270,7 @@ async function cadastraCategoria() {
     let regiaoCentro = Math.trunc(document.getElementById('regiaoCentro').value);
     let regiaoBaixo = Math.trunc(document.getElementById('regiaoBaixo').value);
     if (!regiaoCima || !regiaoCentro || !regiaoBaixo) {
-        document.getElementById("msgRegioes").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe o valor para cada região!</p>";
+        document.getElementById("msgRegioes").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe o valor para cada região!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -360,7 +360,7 @@ async function listarCategorias() {
     if (categorias.data.found) {
         document.getElementById("msgSemCategorias").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione uma Categoria--</option>';
+        let opcoes = '<option value=""></option>';
         for (let i = 0; i < resposta.length; i++) {
             // console.log(resposta[i]['nome']);
             // categoriaSelect.innerHTML = categoriaSelect.innerHTML + '<option value="' + resposta[i]['_id'] + '">' + resposta[i]['nome'] + '</option>';
@@ -385,14 +385,14 @@ async function listarCategorias() {
 async function atualizaCategoria() {
     let categoriaOption = categoriaSelect.options[categoriaSelect.selectedIndex].value;
     if (!categoriaOption) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Categoria para Alterar!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione uma Categoria para Alterar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let tipoOption = tipoSelect.options[tipoSelect.selectedIndex].value;
     if (!tipoOption) {
-        document.getElementById("msgNaoSelecionado").innerHTML = "<p style='color: #f33; font-weight: bold'>A categoria precisa ter um Tipo!</p>";
+        document.getElementById("msgNaoSelecionado").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>A categoria precisa ter um Tipo!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -403,21 +403,21 @@ async function atualizaCategoria() {
 
     let nomeCategoria = document.getElementById('nomeCategoria').value;
     if (!nomeCategoria) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>A categoria precisa ter um Nome!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>A categoria precisa ter um Nome!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraMinCategoria = Math.trunc(document.getElementById('larguraMinCategoria').value);
     if (!larguraMinCategoria) {
-        document.getElementById("msgLargMin").innerHTML = "<p style='color: #f33; font-weight: bold'>A categoria precisa ter uma Largura Mínima!</p>";
+        document.getElementById("msgLargMin").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>A categoria precisa ter uma Largura Mínima!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraMaxCategoria = Math.trunc(document.getElementById('larguraMaxCategoria').value);
     if (!larguraMaxCategoria) {
-        document.getElementById("msgLargMax").innerHTML = "<p style='color: #f33; font-weight: bold'>A categoria precisa ter uma Largura Máxima!</p>";
+        document.getElementById("msgLargMax").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>A categoria precisa ter uma Largura Máxima!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -426,7 +426,7 @@ async function atualizaCategoria() {
     let regiaoCentro = Math.trunc(document.getElementById('regiaoCentro').value);
     let regiaoBaixo = Math.trunc(document.getElementById('regiaoBaixo').value);
     if (!regiaoCima || !regiaoCentro || !regiaoBaixo) {
-        document.getElementById("msgRegioes").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe valores para cada Região!</p>";
+        document.getElementById("msgRegioes").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe valores para cada Região!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -454,7 +454,7 @@ async function atualizaCategoria() {
 async function removeCategoria() {
     let categoriaOption = categoriaSelect.options[categoriaSelect.selectedIndex].value;
     if (!categoriaOption) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Categoria se quiser Remover!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione uma Categoria se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -493,14 +493,14 @@ async function cadastraProduto() {
 
     let nomeProduto = document.getElementById('nomeProduto').value;
     if (!nomeProduto) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let descricaoProduto = document.getElementById('descricaoProduto').value;
     if (!descricaoProduto) {
-        document.getElementById("msgSemDesc").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma descrição!</p>";
+        document.getElementById("msgSemDesc").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma descrição!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -508,7 +508,7 @@ async function cadastraProduto() {
     const categoriaNome = categoriaProduto.options[categoriaProduto.selectedIndex].text;
     let categoriaId = categoriaProduto.options[categoriaProduto.selectedIndex].value;
     if (!categoriaId) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma categoria!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma categoria!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -520,35 +520,35 @@ async function cadastraProduto() {
 
     let alturaProduto = Math.trunc(document.getElementById('alturaProduto').value);
     if (!alturaProduto) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma altura!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma altura!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraProduto = Math.trunc(document.getElementById('larguraProduto').value);
     if (!larguraProduto) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma largura!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma largura!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let minProdutos = Math.trunc(document.getElementById('minimoProdutos').value);
     if (!minProdutos) {
-        document.getElementById("msgMinProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, defina o número mínimo de frentes!</p>";
+        document.getElementById("msgMinProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, defina o número mínimo de frentes!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let maxProdutos = Math.trunc(document.getElementById('maximoProdutos').value);
     if (!maxProdutos) {
-        document.getElementById("msgMaxProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, defina o número máximo de frentes!</p>";
+        document.getElementById("msgMaxProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, defina o número máximo de frentes!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let valorUtil = Math.trunc(document.getElementById('valorUtilidade').value);
     if (!valorUtil) {
-        document.getElementById("msgValorUtil").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter um valor de utilidade!</p>";
+        document.getElementById("msgValorUtil").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter um valor de utilidade!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -638,7 +638,7 @@ async function listarProdutos() {
     if (produtos.data.found) {
         document.getElementById("msgSemProdutos").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione um Produto--</option>';
+        let opcoes = '<option value=""></option>';
         for (let i = 0; i < resposta.length; i++) {
             // console.log(resposta[i]['nome']);
             // produtoSelect.innerHTML = produtoSelect.innerHTML + '<option value="' + resposta[i]['_id'] + '">' + resposta[i]['nome'] + '</option>';
@@ -663,21 +663,21 @@ async function atualizaProduto() {
 
     let produtoOption = produtoSelect.options[produtoSelect.selectedIndex].value;
     if (!produtoOption) {
-        document.getElementById("msgSemProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione um Produto para Alterar!</p>";
+        document.getElementById("msgSemProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione um Produto para Alterar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let nomeProduto = document.getElementById('nomeProduto').value;
     if (!nomeProduto) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let descricaoProduto = document.getElementById('descricaoProduto').value;
     if (!descricaoProduto) {
-        document.getElementById("msgSemDesc").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma descrição!</p>";
+        document.getElementById("msgSemDesc").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma descrição!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -695,7 +695,7 @@ async function atualizaProduto() {
     const categoriaNome = categoriaProduto.options[categoriaProduto.selectedIndex].text;
     let categoriaId = categoriaProduto.options[categoriaProduto.selectedIndex].value;
     if (!categoriaId) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma categoria!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma categoria!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -707,35 +707,35 @@ async function atualizaProduto() {
 
     let alturaProduto = Math.trunc(document.getElementById('alturaProduto').value);
     if (!alturaProduto) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma altura!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma altura!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraProduto = Math.trunc(document.getElementById('larguraProduto').value);
     if (!larguraProduto) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter uma largura!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter uma largura!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let minProdutos = Math.trunc(document.getElementById('minimoProdutos').value);
     if (!minProdutos) {
-        document.getElementById("msgMinProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, defina o número mínimo de frentes!</p>";
+        document.getElementById("msgMinProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, defina o número mínimo de frentes!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let maxProdutos = Math.trunc(document.getElementById('maximoProdutos').value);
     if (!maxProdutos) {
-        document.getElementById("msgMaxProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, defina o número máximo de frentes!</p>";
+        document.getElementById("msgMaxProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, defina o número máximo de frentes!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let valorUtil = Math.trunc(document.getElementById('valorUtilidade').value);
     if (!valorUtil) {
-        document.getElementById("msgValorUtil").innerHTML = "<p style='color: #f33; font-weight: bold'>O produto deve ter um valor de utilidade!</p>";
+        document.getElementById("msgValorUtil").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>O produto deve ter um valor de utilidade!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -773,7 +773,7 @@ async function atualizaProduto() {
 async function removeProduto() {
     let produtoOption = produtoSelect.options[produtoSelect.selectedIndex].value;
     if (!produtoOption) {
-        document.getElementById("msgSemProdutos").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione um Produto se quiser Remover!</p>";
+        document.getElementById("msgSemProdutos").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione um Produto se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -850,34 +850,34 @@ async function cadastraGondula() {
 
     let nomeGondula = document.getElementById('nomeGondula').value;
     if (!nomeGondula) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Por favor, informe um nome para cadastrar!</p>";
         scrollTo(0, 0);
         return;
     }
 
     if (!categoriasAdicionadas.length) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let alturaGondula = Math.trunc(document.getElementById('alturaGondula').value);
     if (!alturaGondula) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndola!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a altura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraGondula = Math.trunc(document.getElementById('larguraGondula').value);
     if (!larguraGondula) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndola!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a largura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let qtdNiveis = parseInt(document.getElementById('numNiveis').value);
     if (!qtdNiveis || isNaN(qtdNiveis) || qtdNiveis <= 0) {
-        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
+        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1000,7 +1000,7 @@ async function listarGondulas() {
     if (gondulas.data.found) {
         document.getElementById("msgSemGondulas").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione uma Gôndola--</option>';
+        let opcoes = '<option value=""></option>';
         for (let i = 0; i < resposta.length; i++) {
             // console.log(resposta[i]['nome']);
             // gondulaSelect.innerHTML = gondulaSelect.innerHTML + '<option value="' + resposta[i]['_id'] + '">' + resposta[i]['nome'] + '</option>';
@@ -1011,6 +1011,7 @@ async function listarGondulas() {
         }
         if (gondulaPlanograma) {
             gondulaPlanograma.innerHTML = opcoes;
+            gondulaPlanograma.value = localStorage.getItem('valorGondolaSelect');
         }
     } else {
         // console.log(gondulas.data.msg)
@@ -1021,7 +1022,7 @@ async function listarGondulas() {
 async function atualizaGondula() {
     let gondulaOption = gondulaSelect.options[gondulaSelect.selectedIndex].value;
     if (!gondulaOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndola para Alterar!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione uma Gôndola para Alterar!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1034,34 +1035,34 @@ async function atualizaGondula() {
 
     let nomeGondula = document.getElementById('nomeGondula').value;
     if (!nomeGondula) {
-        document.getElementById("msgSemNome").innerHTML = "<p style='color: #f33; font-weight: bold'>A gôndola precisa ter um nome!</p>";
+        document.getElementById("msgSemNome").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>A gôndola precisa ter um nome!</p>";
         scrollTo(0, 0);
         return;
     }
 
     if (!categoriasAdicionadas.length) {
-        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
+        document.getElementById("msgSemCategorias").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione ao menos uma categoria para compor a Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let alturaGondula = Math.trunc(document.getElementById('alturaGondula').value);
     if (!alturaGondula) {
-        document.getElementById("msgSemAltura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a altura da Gôndola!</p>";
+        document.getElementById("msgSemAltura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a altura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let larguraGondula = Math.trunc(document.getElementById('larguraGondula').value);
     if (!larguraGondula) {
-        document.getElementById("msgSemLargura").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a largura da Gôndola!</p>";
+        document.getElementById("msgSemLargura").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a largura da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
 
     let qtdNiveis = parseInt(document.getElementById('numNiveis').value);
     if (!qtdNiveis || isNaN(qtdNiveis) || qtdNiveis <= 0) {
-        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
+        document.getElementById("msgQtdNiveis").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a quantidade de níveis da Gôndola!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1083,7 +1084,7 @@ async function atualizaGondula() {
 async function removeGondula() {
     let gondulaOption = gondulaSelect.options[gondulaSelect.selectedIndex].value;
     if (!gondulaOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione uma Gôndola se quiser Remover!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione uma Gôndola se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1116,7 +1117,8 @@ function showTabelaNiveis(num, regioesNiveisIniciais = []) {
         const th = document.createElement('th');
         th.textContent = "Nível " + (i + 1);
         th.style.textAlign = 'center';  // Centralizando o texto
-        th.style.color = 'black';  // Mudando a cor para preto
+        // th.style.color = 'black';  // Mudando a cor para preto
+        th.style.backgroundColor = '#a6c9e7'
         headers.appendChild(th);
         
         // Adicionando células
@@ -1131,7 +1133,7 @@ function showTabelaNiveis(num, regioesNiveisIniciais = []) {
         };
 
         select.name = `nivel${i + 1}`;
-        select.className = "form-control bg-dark text-warning";  // Estilo do Bootstrap e cor personalizada
+        select.className = "form-control bg-tabValor";  // Estilo do Bootstrap e cor personalizada
 
         const options = [
             {value: '0', text: 'Cima'},
@@ -1143,7 +1145,7 @@ function showTabelaNiveis(num, regioesNiveisIniciais = []) {
             const option = document.createElement('option');
             option.value = optionData.value;
             option.textContent = optionData.text;
-            option.className = "bg-dark text-warning";
+            option.className = "bg-tabValor";
             // Marca o option como selecionado se ele corresponder ao valor inicial
             if (optionData.value == initialValue) {
                 option.selected = true;
@@ -1167,11 +1169,15 @@ function showTabelaNiveis(num, regioesNiveisIniciais = []) {
 /**
  * PLANOGRAMA
  */
+
 const gondulaPlanograma = document.getElementById("gondulaPlanograma");
 if (gondulaPlanograma) {
     listarGondulas();
     gondulaPlanograma.addEventListener("change", () => {
         document.getElementById("msgSemGondulas").innerHTML = "";
+        document.getElementById("msgGerando").innerHTML = "";
+        localStorage.setItem('valorGondolaSelect', gondulaPlanograma.options[gondulaPlanograma.selectedIndex].value);
+        // localStorage.setItem('planGerado', '2');
     });
 }
 
@@ -1189,18 +1195,28 @@ function statusBotao() {
     const isGenerating = localStorage.getItem('gerandoPlan') === 'true';
 
     if (isGenerating) {
-        document.getElementById("msgGerando").innerHTML = "<p style='color: #f33; font-weight: bold; font-size: 20px'>Planograma sendo gerado. Por favor, aguarde para gerar outro!</p>";
+        document.getElementById("msgGerando").innerHTML = 
+        "<p style='text-align: center; color: rgb(21, 21, 21); font-weight: bold; font-size: 22px'>Gerando planograma. Por favor,<br>aguarde para gerar outro!<br><img src='/assets/gerando-plan.png' alt='Gerando Planograma' style='margin-top: 70px;'></p>";
+
         btnGeraPlan.disabled = true;
+        gondulaPlanograma.disabled = true;
     } else {
         document.getElementById("msgGerando").innerHTML = "";
         btnGeraPlan.disabled = false;
+        gondulaPlanograma.disabled = false;
+
+        const planGeradoVerif = localStorage.getItem('planGerado') === '1';
+
+        if (planGeradoVerif && gondulaPlanograma.options[gondulaPlanograma.selectedIndex].value !== "") {
+            document.getElementById("msgGerando").innerHTML = "<p style='text-align: center; color: rgb(21, 21, 21); font-weight: bold; font-size: 22px'>Planograma gerado com sucesso!<br>Consulte seus planogramas.<br><img src='assets/plan-gerado.png' alt='Planograma Gerado' style='margin-top: 70px;'></p>";
+        }
     }
 }
 
 async function gerarPlanograma() {
     let gondulaPOption = gondulaPlanograma.options[gondulaPlanograma.selectedIndex].value;
     if (!gondulaPOption) {
-        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: #f33; font-weight: bold;'>Selecione uma Gôndola para Gerar o Planograma!</p>";
+        document.getElementById("msgSemGondulas").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold;'>Selecione uma Gôndola para Gerar o Planograma!</p>";
         scrollTo(0, 0);
         return;
     }
@@ -1213,6 +1229,7 @@ async function gerarPlanograma() {
 
     // await new Promise(r => setTimeout(r, 5000));
 
+    localStorage.setItem('planGerado', '1');
     checkPlanogramaStatus();
 
 }
@@ -1239,7 +1256,7 @@ async function listarPlanogramas() {
     if (planograma.data.found) {
         document.getElementById("msgSemPlanogramas").innerHTML = "";
 
-        let opcoes = '<option value="">--Selecione um Planograma--</option>';
+        let opcoes = '<option value=""></option>';
         for (let i = 0; i < resposta.length; i++) {
             opcoes += '<option value="' + resposta[i]["_id"] + '">' + resposta[i]["gondula"] + ' - ' + resposta[i]["usuario"] + ' - ' + resposta[i]["data_hora"] + '</option>';
         }
@@ -1292,19 +1309,22 @@ async function renderizaPlanograma(data) {
             for (let idx = 0; idx < nivel.itens.length; idx++) {
                 const item = nivel.itens[idx];
                 if (!itemColorMapping[item]) {
-                    itemColorMapping[item] = generateRandomColor();
+                    itemColorMapping[item] = generateRandomColor(item);
                 }
-                const produtoID = data.produtos[item];
 
+                const produtoID = data.produtos[item];
+                
                 try {
                     const produtoObtido = await axios.get("/produto/" + produtoID);
                     const produto = produtoObtido.data.produto;
-
+                    
                     for (let i = 0; i < nivel.quantidade[idx]; i++) {
                         const itemDiv = document.createElement('div');
                         itemDiv.classList.add('item');
                         itemDiv.textContent = `${item}`;
                         itemDiv.style.backgroundColor = itemColorMapping[item];
+                        itemDiv.style.color = `#000`;
+                        itemDiv.style.fontWeight = `500`;
                         itemDiv.style.height = produto.altura * 2.7 - 3 + 'px';
                         itemDiv.style.width = produto.largura * 2.7 + 'px';
                         levelDiv.appendChild(itemDiv);
@@ -1328,15 +1348,18 @@ async function legendaPlanograma(data) {
     while (legenda.firstChild) {
         legenda.removeChild(legenda.firstChild);
     }
-    legenda.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    legenda.style.backgroundColor = 'rgb(25, 25, 25)';
 
     const para = document.createElement('p');
     para.innerText = "Legenda: ";
-    para.style.color = '#ffd900';
+    para.style.color = '#fff';
     para.style.fontWeight = 'bold';
+    para.style.fontSize = '40px';
+    para.style.paddingLeft = '50px';
     legenda.appendChild(para);
 
     const ul = document.createElement('ul');
+    ul.setAttribute('class','ul-legenda');
     
     for (let indiceProd = 0; indiceProd < data.produtos.length; indiceProd++) {
         const produtoID = data.produtos[indiceProd];
@@ -1356,7 +1379,35 @@ async function legendaPlanograma(data) {
 
 }
 
-function generateRandomColor() {
+function generateRandomColor(indProd) {
+    switch (indProd%12) {
+        case 0:
+            return `#e97197`;
+        case 1:
+            return `#5B95CE`;
+        case 2:
+            return `#FFB2B0`;
+        case 3:
+            return `#41D67D`;
+        case 4:
+            return `#CCCCCC`;
+        case 5:
+            return `#AA4F63`;
+        case 6:
+            return `#18B256`;
+        case 7:
+            return `#3F70AA`;
+        case 8:
+            return `#FF9088`;
+        case 9:
+            return `#F2FDFF`;
+        case 10:
+            return `#099341`;
+        case 11:
+            return `#FF7364`;
+        default:
+            break;
+    }
     const hue = Math.floor(Math.random() * 360);
     return `hsl(${hue}, 60%, 70%)`;
 }
@@ -1364,7 +1415,7 @@ function generateRandomColor() {
 async function removePlanograma() {
     let planogramaOption = selectPlanograma.options[selectPlanograma.selectedIndex].value;
     if (!planogramaOption) {
-        document.getElementById("msgSemPlanogramas").innerHTML = "<p style='color: #f33; font-weight: bold'>Selecione um Planograma se quiser Remover!</p>";
+        document.getElementById("msgSemPlanogramas").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Selecione um Planograma se quiser Remover!</p>";
         scrollTo(0, 0);
         return;
     }

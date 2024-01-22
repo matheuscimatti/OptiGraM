@@ -71,7 +71,7 @@ routes.get("/dashboard", (request, response) => {
             caminho = "/views/gestor.html";
             break;
         case "repositor":
-            caminho = "/views/repositor.html";
+            caminho = "/views/repositor-ConsultarPlanograma.html";
             break;
         default:
             break;

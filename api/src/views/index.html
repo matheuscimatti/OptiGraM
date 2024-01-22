@@ -111,13 +111,13 @@
 
             let inputUsername = document.getElementById('inputUsername').value;
             if (!inputUsername) {
-                document.getElementById("msgUsername").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe seu Login!</p>";
+                document.getElementById("msgUsername").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe seu Login!</p>";
                 scrollTo(0, 0);
                 return;
             }
             let inputPassword = document.getElementById('inputPassword').value;
             if (!inputPassword) {
-                document.getElementById("msgSenha").innerHTML = "<p style='color: #f33; font-weight: bold'>Informe a Senha!</p>";
+                document.getElementById("msgSenha").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold'>Informe a Senha!</p>";
                 scrollTo(0, 0);
                 return;
             }
@@ -143,7 +143,7 @@
 
             const logar = await axios.post("/login", data);  // Mudei para POST em "/login"
             if (logar.data.erro) {
-                document.getElementById("msgInvalid").innerHTML = "<p style='color: #f33; font-weight: bold;'>" + logar.data.erro + "</p>";
+                document.getElementById("msgInvalid").innerHTML = "<p style='color: rgb(214, 37, 76); font-weight: bold;'>" + logar.data.erro + "</p>";
                 scrollTo(0, 0);
                 return;
             }
