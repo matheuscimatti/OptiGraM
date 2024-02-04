@@ -101,18 +101,39 @@
 }
 
 .background-compras {
-    height: 100vh;
-    width: 100vw;
+    min-height: 90vh;
+    /* width: 100vw; */
     background-color: #f2fdff;
     background-image: url(/assets/fundo-compras.png);
     background-size: 95%;
     background-repeat: no-repeat;
     background-position: center;
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.bg-cad-usuario {
+    /* height: 100vh;
+    width: 100vw; */
+    min-height: 65vh;
+    margin-top: 110px;
+    /* margin-bottom: 50px; */
+    background-color: #f2fdff;
+    background-image: url(/assets/fundo-cad-usuario.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 70px;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
 }
 
 .cartoes-home {
